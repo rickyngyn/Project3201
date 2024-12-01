@@ -1,0 +1,150 @@
+module main(
+
+	input clk,
+	input pause,
+	input switch,
+	input reset,
+	input clock,
+	input stopwatch,
+	input [3:0] set,
+	output[6:0] sec1,
+   output[6:0] sec2,
+	output[6:0] min1,
+   output[6:0] min2,
+	output[6:0] hour1,
+   output[6:0] hour2
+); 
+
+	reg [3:0] sec_reg1 = 4'd0;
+	reg [3:0] sec_reg2 = 4'd1;
+	reg [3:0] min_reg1 = 4'd0;
+	reg [3:0] min_reg2 = 4'd1;
+	reg [3:0] hour_reg1 = 4'd0;
+	reg [3:0] hour_reg2 = 4'd1;
+	
+	   // Registers for the stopwatch
+    reg [3:0] sw_ms1 = 4'd0;
+    reg [3:0] sw_ms2 = 4'd0;
+    reg [3:0] sw_sec1 = 4'd0;
+    reg [3:0] sw_sec2 = 4'd0;
+    reg [3:0] sw_min1 = 4'd0;
+    reg [3:0] sw_min2 = 4'd0;
+	
+	reg b = 1;
+	
+	wire cout;
+	
+	Clockdivider clk_div(clk, cout);
+	
+	always @(negedge pause) 
+	begin
+		b = ~b;
+	end
+	
+	
+
+		always @(posedge cout & b) begin
+		if (clock == 1 && stopwatch == 0) begin 
+			if (reset == 0) begin
+				sec_reg1 <= 0;
+				sec_reg2 <= 0;
+				min_reg1 <= 0;
+				min_reg2 <= 0;
+				hour_reg1 <= 0;
+				hour_reg2 <= 0;
+			end else if (b == 0) begin
+				sec_reg1 <= sec_reg1;
+				sec_reg2 <= sec_reg2;
+				min_reg1 <= min_reg1;
+				min_reg2 <= min_reg2;
+				hour_reg1 <= hour_reg1;
+				hour_reg2 <= hour_reg2;
+			end else if (reset != 0) begin
+				if (sec_reg2 < 4'd9) begin
+					sec_reg2 <= sec_reg2 + 1;
+				end else begin
+					sec_reg2 <= 4'd0;
+					if (sec_reg1 < 4'd5) begin
+						sec_reg1 <= sec_reg1 + 1;
+					end else begin
+						sec_reg1 <= 4'd0;
+						if (min_reg2 < 4'd9) begin
+							min_reg2 <= min_reg2 + 1;
+						end else begin
+							min_reg2 <= 4'd0;
+							if (min_reg1 < 4'd5) begin
+								min_reg1 <= min_reg1 + 1;
+							end else begin
+								min_reg1 <= 4'd0;
+								if (hour_reg2 == 4'd3 && hour_reg1 == 4'd2) begin
+									hour_reg2 <= 4'd0;
+									hour_reg1 <= 4'd0;
+								end else begin
+									if (hour_reg2 < 4'd9) begin
+										hour_reg2 <= hour_reg2 + 1;
+									end else begin
+										hour_reg2 <= 4'd0;
+										if (hour_reg1 < 4'd2) begin
+											hour_reg1 <= hour_reg1 + 1;
+										end else begin
+											hour_reg1 <= 4'd0;
+											hour_reg2 <= 4'd0;
+											min_reg1 <= 4'd0;
+											min_reg2 <= 4'd0;
+											sec_reg1 <= 4'd0;
+											sec_reg2 <= 4'd0;
+										end
+									end
+								end
+							end
+						end
+					end
+				end
+			end
+		end else if (clock == 0 && stopwatch == 1) begin
+			if (sw_ms2 < 4'd9) begin
+                    sw_ms2 <= sw_ms2 + 1;
+                end else begin
+                    sw_ms2 <= 4'd0;
+                    if (sw_ms1 < 4'd9) begin
+                        sw_ms1 <= sw_ms1 + 1;
+                    end else begin
+                        sw_ms1 <= 4'd0;
+                        if (sw_sec2 < 4'd9) begin
+                            sw_sec2 <= sw_sec2 + 1;
+                        end else begin
+                            sw_sec2 <= 4'd0;
+                            if (sw_sec1 < 4'd5) begin
+                                sw_sec1 <= sw_sec1 + 1;
+                            end else begin
+                                sw_sec1 <= 4'd0;
+                                if (sw_min2 < 4'd9) begin
+                                    sw_min2 <= sw_min2 + 1;
+                                end else begin
+                                    sw_min2 <= 4'd0;
+                                    if (sw_min1 < 4'd5) begin
+                                        sw_min1 <= sw_min1 + 1;
+                                    end else begin
+                                        sw_min1 <= 4'd0;
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+        end
+
+		Decoder secli2(stopwatch ? sw_ms2 : sec_reg2, sec2);
+		Decoder secli1(stopwatch ? sw_ms1 : sec_reg1, sec1);
+		
+		Decoder minli2(stopwatch ? sw_sec2 : min_reg2, min2);
+		Decoder minli1(stopwatch ? sw_sec1 : min_reg1, min1);
+		
+		Decoder hourli2(stopwatch ? sw_min2 : hour_reg2, hour2);
+		Decoder hourli1(stopwatch ? sw_min1 : hour_reg1, hour1);
+		
+
+endmodule
+	
+

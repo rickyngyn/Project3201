@@ -1,17 +1,16 @@
-module clockdivider(cin, cout);
+module Clockdivider(cin, cout);
 
-//This clock divider was taken from lab 4
-
+// Clock divider for milliseconds (1 kHz output)
 input cin;
-output reg cout; 
+output reg cout;
 
-reg[31:0] count = 32'd0;
+reg [15:0] count = 16'd0; // 16-bit counter for up to 50,000
 always @(posedge cin) begin
-	if (count < 25000000) begin
-		count <= count + 32'd1;
-	end else begin
-		count <= 32'd0;
-		cout <= ~cout;
-	end
+    if (count < 50000 - 1) begin // Count up to 49,999 (50,000 cycles)
+        count <= count + 16'd1;
+    end else begin
+        count <= 16'd0; // Reset counter
+        cout <= ~cout;  // Toggle output clock
+    end
 end
-endmodule 
+endmodule
