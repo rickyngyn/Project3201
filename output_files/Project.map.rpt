@@ -1,0 +1,803 @@
+Analysis & Synthesis report for Project
+Mon Dec  2 20:39:41 2024
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Port Connectivity Checks: "Decoder:hour2_decoder"
+ 15. Port Connectivity Checks: "Decoder:hour1_decoder"
+ 16. Port Connectivity Checks: "Decoder:min2_decoder"
+ 17. Port Connectivity Checks: "Decoder:min1_decoder"
+ 18. Port Connectivity Checks: "Decoder:sec2_decoder"
+ 19. Port Connectivity Checks: "Decoder:sec1_decoder"
+ 20. Port Connectivity Checks: "clock:clk_inst"
+ 21. Post-Synthesis Netlist Statistics for Top Partition
+ 22. Elapsed Time Per Partition
+ 23. Analysis & Synthesis Messages
+ 24. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Dec  2 20:39:41 2024       ;
+; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name                      ; Project                                     ;
+; Top-level Entity Name              ; main                                        ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 382                                         ;
+;     Total combinational functions  ; 342                                         ;
+;     Dedicated logic registers      ; 148                                         ;
+; Total registers                    ; 148                                         ;
+; Total pins                         ; 54                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 10M50DAF484C6GES   ;                    ;
+; Top-level entity name                                            ; main               ; Project            ;
+; Family name                                                      ; MAX 10             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 24          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 16          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-16        ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                  ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                    ; Library ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------+---------+
+; clockdivider.v                   ; yes             ; User Verilog HDL File  ; /eecs/home/ngurky/3201 Project/clockdivider.v   ;         ;
+; main.v                           ; yes             ; User Verilog HDL File  ; /eecs/home/ngurky/3201 Project/main.v           ;         ;
+; Decoder.v                        ; yes             ; User Verilog HDL File  ; /eecs/home/ngurky/3201 Project/Decoder.v        ;         ;
+; countdown.v                      ; yes             ; User Verilog HDL File  ; /eecs/home/ngurky/3201 Project/countdown.v      ;         ;
+; stopwatch.v                      ; yes             ; User Verilog HDL File  ; /eecs/home/ngurky/3201 Project/stopwatch.v      ;         ;
+; clock.v                          ; yes             ; User Verilog HDL File  ; /eecs/home/ngurky/3201 Project/clock.v          ;         ;
+; clockdividersw.v                 ; yes             ; User Verilog HDL File  ; /eecs/home/ngurky/3201 Project/clockdividersw.v ;         ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 382         ;
+;                                             ;             ;
+; Total combinational functions               ; 342         ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 130         ;
+;     -- 3 input functions                    ; 133         ;
+;     -- <=2 input functions                  ; 79          ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 296         ;
+;     -- arithmetic mode                      ; 46          ;
+;                                             ;             ;
+; Total registers                             ; 148         ;
+;     -- Dedicated logic registers            ; 148         ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 54          ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; reset~input ;
+; Maximum fan-out                             ; 57          ;
+; Total fan-out                               ; 1531        ;
+; Average fan-out                             ; 2.56        ;
++---------------------------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                      ;
++----------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------+----------------+--------------+
+; Compilation Hierarchy Node       ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                              ; Entity Name    ; Library Name ;
++----------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------+----------------+--------------+
+; |main                            ; 342 (60)            ; 148 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 54   ; 0            ; 0          ; |main                                            ; main           ; work         ;
+;    |Decoder:hour1_decoder|       ; 15 (15)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|Decoder:hour1_decoder                      ; Decoder        ; work         ;
+;    |Decoder:hour2_decoder|       ; 15 (15)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|Decoder:hour2_decoder                      ; Decoder        ; work         ;
+;    |Decoder:min1_decoder|        ; 15 (15)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|Decoder:min1_decoder                       ; Decoder        ; work         ;
+;    |Decoder:min2_decoder|        ; 15 (15)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|Decoder:min2_decoder                       ; Decoder        ; work         ;
+;    |Decoder:sec1_decoder|        ; 15 (15)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|Decoder:sec1_decoder                       ; Decoder        ; work         ;
+;    |Decoder:sec2_decoder|        ; 15 (15)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|Decoder:sec2_decoder                       ; Decoder        ; work         ;
+;    |clock:clk_inst|              ; 80 (47)             ; 74 (41)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|clock:clk_inst                             ; clock          ; work         ;
+;       |Clockdivider:clk_div|     ; 33 (33)             ; 33 (33)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|clock:clk_inst|Clockdivider:clk_div        ; Clockdivider   ; work         ;
+;    |countdown:cd_inst|           ; 37 (26)             ; 10 (9)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|countdown:cd_inst                          ; countdown      ; work         ;
+;       |Clockdivider:clk_divider| ; 11 (11)             ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|countdown:cd_inst|Clockdivider:clk_divider ; Clockdivider   ; work         ;
+;    |stopwatch:sw_inst|           ; 75 (47)             ; 64 (47)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|stopwatch:sw_inst                          ; stopwatch      ; work         ;
+;       |clockdividersw:clk_div|   ; 28 (28)             ; 17 (17)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|stopwatch:sw_inst|clockdividersw:clk_div   ; clockdividersw ; work         ;
++----------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------+----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                       ;
++-----------------------------------------------------+----------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal        ; Free of Timing Hazards ;
++-----------------------------------------------------+----------------------------+------------------------+
+; Decoder:sec1_decoder|index[0]                       ; Decoder:sec1_decoder|Mux7  ; yes                    ;
+; Decoder:sec1_decoder|index[1]                       ; Decoder:sec1_decoder|Mux7  ; yes                    ;
+; Decoder:sec1_decoder|index[2]                       ; Decoder:sec1_decoder|Mux7  ; yes                    ;
+; Decoder:sec1_decoder|index[3]                       ; Decoder:sec1_decoder|Mux7  ; yes                    ;
+; Decoder:sec1_decoder|index[4]                       ; Decoder:sec1_decoder|Mux7  ; yes                    ;
+; Decoder:sec1_decoder|index[5]                       ; Decoder:sec1_decoder|Mux7  ; yes                    ;
+; Decoder:sec1_decoder|index[6]                       ; Decoder:sec1_decoder|Mux7  ; yes                    ;
+; Decoder:sec2_decoder|index[0]                       ; Decoder:sec2_decoder|Mux7  ; yes                    ;
+; Decoder:sec2_decoder|index[1]                       ; Decoder:sec2_decoder|Mux7  ; yes                    ;
+; Decoder:sec2_decoder|index[2]                       ; Decoder:sec2_decoder|Mux7  ; yes                    ;
+; Decoder:sec2_decoder|index[3]                       ; Decoder:sec2_decoder|Mux7  ; yes                    ;
+; Decoder:sec2_decoder|index[4]                       ; Decoder:sec2_decoder|Mux7  ; yes                    ;
+; Decoder:sec2_decoder|index[5]                       ; Decoder:sec2_decoder|Mux7  ; yes                    ;
+; Decoder:sec2_decoder|index[6]                       ; Decoder:sec2_decoder|Mux7  ; yes                    ;
+; Decoder:min1_decoder|index[0]                       ; Decoder:min1_decoder|Mux7  ; yes                    ;
+; Decoder:min1_decoder|index[1]                       ; Decoder:min1_decoder|Mux7  ; yes                    ;
+; Decoder:min1_decoder|index[2]                       ; Decoder:min1_decoder|Mux7  ; yes                    ;
+; Decoder:min1_decoder|index[3]                       ; Decoder:min1_decoder|Mux7  ; yes                    ;
+; Decoder:min1_decoder|index[4]                       ; Decoder:min1_decoder|Mux7  ; yes                    ;
+; Decoder:min1_decoder|index[5]                       ; Decoder:min1_decoder|Mux7  ; yes                    ;
+; Decoder:min1_decoder|index[6]                       ; Decoder:min1_decoder|Mux7  ; yes                    ;
+; Decoder:min2_decoder|index[0]                       ; Decoder:min2_decoder|Mux7  ; yes                    ;
+; Decoder:min2_decoder|index[1]                       ; Decoder:min2_decoder|Mux7  ; yes                    ;
+; Decoder:min2_decoder|index[2]                       ; Decoder:min2_decoder|Mux7  ; yes                    ;
+; Decoder:min2_decoder|index[3]                       ; Decoder:min2_decoder|Mux7  ; yes                    ;
+; Decoder:min2_decoder|index[4]                       ; Decoder:min2_decoder|Mux7  ; yes                    ;
+; Decoder:min2_decoder|index[5]                       ; Decoder:min2_decoder|Mux7  ; yes                    ;
+; Decoder:min2_decoder|index[6]                       ; Decoder:min2_decoder|Mux7  ; yes                    ;
+; Decoder:hour1_decoder|index[0]                      ; Decoder:hour1_decoder|Mux7 ; yes                    ;
+; Decoder:hour1_decoder|index[1]                      ; Decoder:hour1_decoder|Mux7 ; yes                    ;
+; Decoder:hour1_decoder|index[2]                      ; Decoder:hour1_decoder|Mux7 ; yes                    ;
+; Decoder:hour1_decoder|index[3]                      ; Decoder:hour1_decoder|Mux7 ; yes                    ;
+; Decoder:hour1_decoder|index[4]                      ; Decoder:hour1_decoder|Mux7 ; yes                    ;
+; Decoder:hour1_decoder|index[5]                      ; Decoder:hour1_decoder|Mux7 ; yes                    ;
+; Decoder:hour1_decoder|index[6]                      ; Decoder:hour1_decoder|Mux7 ; yes                    ;
+; Decoder:hour2_decoder|index[0]                      ; Decoder:hour2_decoder|Mux7 ; yes                    ;
+; Decoder:hour2_decoder|index[1]                      ; Decoder:hour2_decoder|Mux7 ; yes                    ;
+; Decoder:hour2_decoder|index[2]                      ; Decoder:hour2_decoder|Mux7 ; yes                    ;
+; Decoder:hour2_decoder|index[3]                      ; Decoder:hour2_decoder|Mux7 ; yes                    ;
+; Decoder:hour2_decoder|index[4]                      ; Decoder:hour2_decoder|Mux7 ; yes                    ;
+; Decoder:hour2_decoder|index[5]                      ; Decoder:hour2_decoder|Mux7 ; yes                    ;
+; Decoder:hour2_decoder|index[6]                      ; Decoder:hour2_decoder|Mux7 ; yes                    ;
+; sec1final[0]                                        ; hour2final[1]              ; yes                    ;
+; sec1final[1]                                        ; hour2final[1]              ; yes                    ;
+; sec1final[2]                                        ; hour2final[1]              ; yes                    ;
+; sec1final[3]                                        ; hour2final[1]              ; yes                    ;
+; sec2final[0]                                        ; hour2final[1]              ; yes                    ;
+; sec2final[1]                                        ; hour2final[1]              ; yes                    ;
+; sec2final[2]                                        ; hour2final[1]              ; yes                    ;
+; sec2final[3]                                        ; hour2final[1]              ; yes                    ;
+; min1final[0]                                        ; hour2final[1]              ; yes                    ;
+; min1final[1]                                        ; hour2final[1]              ; yes                    ;
+; min1final[2]                                        ; hour2final[1]              ; yes                    ;
+; min1final[3]                                        ; hour2final[1]              ; yes                    ;
+; min2final[0]                                        ; hour2final[1]              ; yes                    ;
+; min2final[1]                                        ; hour2final[1]              ; yes                    ;
+; min2final[2]                                        ; hour2final[1]              ; yes                    ;
+; min2final[3]                                        ; hour2final[1]              ; yes                    ;
+; hour1final[0]                                       ; hour2final[1]              ; yes                    ;
+; hour1final[1]                                       ; hour2final[1]              ; yes                    ;
+; hour1final[2]                                       ; hour2final[1]              ; yes                    ;
+; hour1final[3]                                       ; hour2final[1]              ; yes                    ;
+; hour2final[0]                                       ; hour2final[1]              ; yes                    ;
+; hour2final[1]                                       ; hour2final[1]              ; yes                    ;
+; hour2final[2]                                       ; hour2final[1]              ; yes                    ;
+; hour2final[3]                                       ; hour2final[1]              ; yes                    ;
+; Number of user-specified and inferred latches = 66  ;                            ;                        ;
++-----------------------------------------------------+----------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                               ;
++------------------------------------------------------+-----------------------------------------------------------+
+; Register name                                        ; Reason for Removal                                        ;
++------------------------------------------------------+-----------------------------------------------------------+
+; countdown:cd_inst|Clockdivider:clk_divider|count[31] ; Merged with clock:clk_inst|Clockdivider:clk_div|count[31] ;
+; countdown:cd_inst|Clockdivider:clk_divider|count[30] ; Merged with clock:clk_inst|Clockdivider:clk_div|count[30] ;
+; countdown:cd_inst|Clockdivider:clk_divider|count[29] ; Merged with clock:clk_inst|Clockdivider:clk_div|count[29] ;
+; countdown:cd_inst|Clockdivider:clk_divider|count[28] ; Merged with clock:clk_inst|Clockdivider:clk_div|count[28] ;
+; countdown:cd_inst|Clockdivider:clk_divider|count[27] ; Merged with clock:clk_inst|Clockdivider:clk_div|count[27] ;
+; countdown:cd_inst|Clockdivider:clk_divider|count[26] ; Merged with clock:clk_inst|Clockdivider:clk_div|count[26] ;
+; countdown:cd_inst|Clockdivider:clk_divider|count[25] ; Merged with clock:clk_inst|Clockdivider:clk_div|count[25] ;
+; countdown:cd_inst|Clockdivider:clk_divider|count[24] ; Merged with clock:clk_inst|Clockdivider:clk_div|count[24] ;
+; countdown:cd_inst|Clockdivider:clk_divider|count[23] ; Merged with clock:clk_inst|Clockdivider:clk_div|count[23] ;
+; countdown:cd_inst|Clockdivider:clk_divider|count[22] ; Merged with clock:clk_inst|Clockdivider:clk_div|count[22] ;
+; countdown:cd_inst|Clockdivider:clk_divider|count[21] ; Merged with clock:clk_inst|Clockdivider:clk_div|count[21] ;
+; countdown:cd_inst|Clockdivider:clk_divider|count[20] ; Merged with clock:clk_inst|Clockdivider:clk_div|count[20] ;
+; countdown:cd_inst|Clockdivider:clk_divider|count[19] ; Merged with clock:clk_inst|Clockdivider:clk_div|count[19] ;
+; countdown:cd_inst|Clockdivider:clk_divider|count[18] ; Merged with clock:clk_inst|Clockdivider:clk_div|count[18] ;
+; countdown:cd_inst|Clockdivider:clk_divider|count[17] ; Merged with clock:clk_inst|Clockdivider:clk_div|count[17] ;
+; countdown:cd_inst|Clockdivider:clk_divider|count[16] ; Merged with clock:clk_inst|Clockdivider:clk_div|count[16] ;
+; countdown:cd_inst|Clockdivider:clk_divider|count[15] ; Merged with clock:clk_inst|Clockdivider:clk_div|count[15] ;
+; countdown:cd_inst|Clockdivider:clk_divider|count[14] ; Merged with clock:clk_inst|Clockdivider:clk_div|count[14] ;
+; countdown:cd_inst|Clockdivider:clk_divider|count[13] ; Merged with clock:clk_inst|Clockdivider:clk_div|count[13] ;
+; countdown:cd_inst|Clockdivider:clk_divider|count[12] ; Merged with clock:clk_inst|Clockdivider:clk_div|count[12] ;
+; countdown:cd_inst|Clockdivider:clk_divider|count[11] ; Merged with clock:clk_inst|Clockdivider:clk_div|count[11] ;
+; countdown:cd_inst|Clockdivider:clk_divider|count[10] ; Merged with clock:clk_inst|Clockdivider:clk_div|count[10] ;
+; countdown:cd_inst|Clockdivider:clk_divider|count[9]  ; Merged with clock:clk_inst|Clockdivider:clk_div|count[9]  ;
+; countdown:cd_inst|Clockdivider:clk_divider|count[8]  ; Merged with clock:clk_inst|Clockdivider:clk_div|count[8]  ;
+; countdown:cd_inst|Clockdivider:clk_divider|count[7]  ; Merged with clock:clk_inst|Clockdivider:clk_div|count[7]  ;
+; countdown:cd_inst|Clockdivider:clk_divider|count[6]  ; Merged with clock:clk_inst|Clockdivider:clk_div|count[6]  ;
+; countdown:cd_inst|Clockdivider:clk_divider|count[5]  ; Merged with clock:clk_inst|Clockdivider:clk_div|count[5]  ;
+; countdown:cd_inst|Clockdivider:clk_divider|count[4]  ; Merged with clock:clk_inst|Clockdivider:clk_div|count[4]  ;
+; countdown:cd_inst|Clockdivider:clk_divider|count[3]  ; Merged with clock:clk_inst|Clockdivider:clk_div|count[3]  ;
+; countdown:cd_inst|Clockdivider:clk_divider|count[2]  ; Merged with clock:clk_inst|Clockdivider:clk_div|count[2]  ;
+; countdown:cd_inst|Clockdivider:clk_divider|count[1]  ; Merged with clock:clk_inst|Clockdivider:clk_div|count[1]  ;
+; countdown:cd_inst|Clockdivider:clk_divider|count[0]  ; Merged with clock:clk_inst|Clockdivider:clk_div|count[0]  ;
+; clock:clk_inst|sec_reg1[3]                           ; Stuck at GND due to stuck port data_in                    ;
+; clock:clk_inst|min_reg1[3]                           ; Stuck at GND due to stuck port data_in                    ;
+; stopwatch:sw_inst|sec1sw[3]                          ; Stuck at GND due to stuck port data_in                    ;
+; clock:clk_inst|sec1[3]                               ; Stuck at GND due to stuck port data_in                    ;
+; clock:clk_inst|min1[3]                               ; Stuck at GND due to stuck port data_in                    ;
+; stopwatch:sw_inst|s1[3]                              ; Stuck at GND due to stuck port data_in                    ;
+; clock:clk_inst|hour_reg1[2,3]                        ; Stuck at GND due to stuck port data_in                    ;
+; clock:clk_inst|hour1[2,3]                            ; Stuck at GND due to stuck port data_in                    ;
+; Total Number of Removed Registers = 42               ;                                                           ;
++------------------------------------------------------+-----------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                 ;
++-----------------------------+---------------------------+-----------------------------------------------------------------------------------+
+; Register name               ; Reason for Removal        ; Registers Removed due to This Register                                            ;
++-----------------------------+---------------------------+-----------------------------------------------------------------------------------+
+; clock:clk_inst|sec_reg1[3]  ; Stuck at GND              ; clock:clk_inst|sec1[3], clock:clk_inst|hour_reg1[2], clock:clk_inst|hour_reg1[3], ;
+;                             ; due to stuck port data_in ; clock:clk_inst|hour1[2], clock:clk_inst|hour1[3]                                  ;
+; clock:clk_inst|min_reg1[3]  ; Stuck at GND              ; clock:clk_inst|min1[3]                                                            ;
+;                             ; due to stuck port data_in ;                                                                                   ;
+; stopwatch:sw_inst|sec1sw[3] ; Stuck at GND              ; stopwatch:sw_inst|s1[3]                                                           ;
+;                             ; due to stuck port data_in ;                                                                                   ;
++-----------------------------+---------------------------+-----------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 148   ;
+; Number of registers using Synchronous Clear  ; 32    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 40    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; clock:clk_inst|sec_reg2[0]             ; 6       ;
+; clock:clk_inst|min_reg2[0]             ; 5       ;
+; clock:clk_inst|hour_reg2[0]            ; 6       ;
+; clock:clk_inst|b                       ; 8       ;
+; stopwatch:sw_inst|b                    ; 2       ;
+; Total number of inverted registers = 5 ;         ;
++----------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |main|stopwatch:sw_inst|ms3sw[3]  ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |main|stopwatch:sw_inst|ms2sw[3]  ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |main|clock:clk_inst|sec_reg1[0]  ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |main|clock:clk_inst|sec_reg2[1]  ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |main|stopwatch:sw_inst|sec2sw[3] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |main|stopwatch:sw_inst|ms1sw[3]  ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |main|clock:clk_inst|min_reg1[0]  ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |main|clock:clk_inst|min_reg2[1]  ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |main|stopwatch:sw_inst|min1sw[3] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |main|stopwatch:sw_inst|sec1sw[1] ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |main|clock:clk_inst|hour_reg2[1] ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |main|clock:clk_inst|hour_reg1[1] ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; Yes        ; |main|countdown:cd_inst|digit2[3] ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |main|countdown:cd_inst|digit1[1] ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |main|hour2final[1]               ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |main|sec1final[0]                ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |main|sec2final[2]                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Decoder:hour2_decoder"                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; hex  ; Input ; Warning  ; Input port expression (7 bits) is wider than the input port (4 bits) it drives.  The 3 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Decoder:hour1_decoder"                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; hex  ; Input ; Warning  ; Input port expression (7 bits) is wider than the input port (4 bits) it drives.  The 3 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Decoder:min2_decoder"                                                                                                                                                           ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; hex  ; Input ; Warning  ; Input port expression (7 bits) is wider than the input port (4 bits) it drives.  The 3 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Decoder:min1_decoder"                                                                                                                                                           ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; hex  ; Input ; Warning  ; Input port expression (7 bits) is wider than the input port (4 bits) it drives.  The 3 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Decoder:sec2_decoder"                                                                                                                                                           ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; hex  ; Input ; Warning  ; Input port expression (7 bits) is wider than the input port (4 bits) it drives.  The 3 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Decoder:sec1_decoder"                                                                                                                                                           ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; hex  ; Input ; Warning  ; Input port expression (7 bits) is wider than the input port (4 bits) it drives.  The 3 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock:clk_inst"                                                                                                                                                        ;
++-------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                                                                               ;
++-------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; sec1  ; Output ; Warning  ; Output or bidir port (4 bits) is smaller than the port expression (7 bits) it drives.  The 3 most-significant bit(s) in the port expression will be connected to GND. ;
+; sec2  ; Output ; Warning  ; Output or bidir port (4 bits) is smaller than the port expression (7 bits) it drives.  The 3 most-significant bit(s) in the port expression will be connected to GND. ;
+; min1  ; Output ; Warning  ; Output or bidir port (4 bits) is smaller than the port expression (7 bits) it drives.  The 3 most-significant bit(s) in the port expression will be connected to GND. ;
+; min2  ; Output ; Warning  ; Output or bidir port (4 bits) is smaller than the port expression (7 bits) it drives.  The 3 most-significant bit(s) in the port expression will be connected to GND. ;
+; hour1 ; Output ; Warning  ; Output or bidir port (4 bits) is smaller than the port expression (7 bits) it drives.  The 3 most-significant bit(s) in the port expression will be connected to GND. ;
+; hour2 ; Output ; Warning  ; Output or bidir port (4 bits) is smaller than the port expression (7 bits) it drives.  The 3 most-significant bit(s) in the port expression will be connected to GND. ;
++-------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 54                          ;
+; cycloneiii_ff         ; 148                         ;
+;     ENA               ; 40                          ;
+;     SCLR              ; 32                          ;
+;     plain             ; 76                          ;
+; cycloneiii_lcell_comb ; 342                         ;
+;     arith             ; 46                          ;
+;         2 data inputs ; 46                          ;
+;     normal            ; 296                         ;
+;         1 data inputs ; 10                          ;
+;         2 data inputs ; 23                          ;
+;         3 data inputs ; 133                         ;
+;         4 data inputs ; 130                         ;
+;                       ;                             ;
+; Max LUT depth         ; 4.10                        ;
+; Average LUT depth     ; 2.46                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Mon Dec  2 20:39:37 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Project -c Project
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file clockdivider.v
+    Info (12023): Found entity 1: Clockdivider File: /eecs/home/ngurky/3201 Project/clockdivider.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file main.v
+    Info (12023): Found entity 1: main File: /eecs/home/ngurky/3201 Project/main.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file Decoder.v
+    Info (12023): Found entity 1: Decoder File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file countdown.v
+    Info (12023): Found entity 1: countdown File: /eecs/home/ngurky/3201 Project/countdown.v Line: 3
+Warning (10261): Verilog HDL Event Control warning at stopwatch.v(33): Event Control contains a complex event expression File: /eecs/home/ngurky/3201 Project/stopwatch.v Line: 33
+Info (12021): Found 1 design units, including 1 entities, in source file stopwatch.v
+    Info (12023): Found entity 1: stopwatch File: /eecs/home/ngurky/3201 Project/stopwatch.v Line: 1
+Warning (10261): Verilog HDL Event Control warning at clock.v(31): Event Control contains a complex event expression File: /eecs/home/ngurky/3201 Project/clock.v Line: 31
+Info (12021): Found 1 design units, including 1 entities, in source file clock.v
+    Info (12023): Found entity 1: clock File: /eecs/home/ngurky/3201 Project/clock.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file clockdividersw.v
+    Info (12023): Found entity 1: clockdividersw File: /eecs/home/ngurky/3201 Project/clockdividersw.v Line: 1
+Info (12127): Elaborating entity "main" for the top level hierarchy
+Warning (10240): Verilog HDL Always Construct warning at main.v(69): inferring latch(es) for variable "sec1final", which holds its previous value in one or more paths through the always construct File: /eecs/home/ngurky/3201 Project/main.v Line: 69
+Warning (10240): Verilog HDL Always Construct warning at main.v(69): inferring latch(es) for variable "sec2final", which holds its previous value in one or more paths through the always construct File: /eecs/home/ngurky/3201 Project/main.v Line: 69
+Warning (10240): Verilog HDL Always Construct warning at main.v(69): inferring latch(es) for variable "min1final", which holds its previous value in one or more paths through the always construct File: /eecs/home/ngurky/3201 Project/main.v Line: 69
+Warning (10240): Verilog HDL Always Construct warning at main.v(69): inferring latch(es) for variable "min2final", which holds its previous value in one or more paths through the always construct File: /eecs/home/ngurky/3201 Project/main.v Line: 69
+Warning (10240): Verilog HDL Always Construct warning at main.v(69): inferring latch(es) for variable "hour1final", which holds its previous value in one or more paths through the always construct File: /eecs/home/ngurky/3201 Project/main.v Line: 69
+Warning (10240): Verilog HDL Always Construct warning at main.v(69): inferring latch(es) for variable "hour2final", which holds its previous value in one or more paths through the always construct File: /eecs/home/ngurky/3201 Project/main.v Line: 69
+Info (10041): Inferred latch for "hour2final[0]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (10041): Inferred latch for "hour2final[1]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (10041): Inferred latch for "hour2final[2]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (10041): Inferred latch for "hour2final[3]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (10041): Inferred latch for "hour2final[4]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (10041): Inferred latch for "hour2final[5]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (10041): Inferred latch for "hour2final[6]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (10041): Inferred latch for "hour1final[0]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (10041): Inferred latch for "hour1final[1]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (10041): Inferred latch for "hour1final[2]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (10041): Inferred latch for "hour1final[3]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (10041): Inferred latch for "hour1final[4]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (10041): Inferred latch for "hour1final[5]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (10041): Inferred latch for "hour1final[6]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (10041): Inferred latch for "min2final[0]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (10041): Inferred latch for "min2final[1]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (10041): Inferred latch for "min2final[2]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (10041): Inferred latch for "min2final[3]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (10041): Inferred latch for "min2final[4]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (10041): Inferred latch for "min2final[5]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (10041): Inferred latch for "min2final[6]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (10041): Inferred latch for "min1final[0]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (10041): Inferred latch for "min1final[1]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (10041): Inferred latch for "min1final[2]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (10041): Inferred latch for "min1final[3]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (10041): Inferred latch for "min1final[4]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (10041): Inferred latch for "min1final[5]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (10041): Inferred latch for "min1final[6]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (10041): Inferred latch for "sec2final[0]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (10041): Inferred latch for "sec2final[1]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (10041): Inferred latch for "sec2final[2]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (10041): Inferred latch for "sec2final[3]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (10041): Inferred latch for "sec2final[4]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (10041): Inferred latch for "sec2final[5]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (10041): Inferred latch for "sec2final[6]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (10041): Inferred latch for "sec1final[0]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (10041): Inferred latch for "sec1final[1]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (10041): Inferred latch for "sec1final[2]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (10041): Inferred latch for "sec1final[3]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (10041): Inferred latch for "sec1final[4]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (10041): Inferred latch for "sec1final[5]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (10041): Inferred latch for "sec1final[6]" at main.v(76) File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Info (12128): Elaborating entity "clock" for hierarchy "clock:clk_inst" File: /eecs/home/ngurky/3201 Project/main.v Line: 39
+Warning (10230): Verilog HDL assignment warning at clock.v(54): truncated value with size 32 to match size of target (4) File: /eecs/home/ngurky/3201 Project/clock.v Line: 54
+Warning (10230): Verilog HDL assignment warning at clock.v(58): truncated value with size 32 to match size of target (4) File: /eecs/home/ngurky/3201 Project/clock.v Line: 58
+Warning (10230): Verilog HDL assignment warning at clock.v(62): truncated value with size 32 to match size of target (4) File: /eecs/home/ngurky/3201 Project/clock.v Line: 62
+Warning (10230): Verilog HDL assignment warning at clock.v(66): truncated value with size 32 to match size of target (4) File: /eecs/home/ngurky/3201 Project/clock.v Line: 66
+Warning (10230): Verilog HDL assignment warning at clock.v(74): truncated value with size 32 to match size of target (4) File: /eecs/home/ngurky/3201 Project/clock.v Line: 74
+Warning (10230): Verilog HDL assignment warning at clock.v(78): truncated value with size 32 to match size of target (4) File: /eecs/home/ngurky/3201 Project/clock.v Line: 78
+Info (12128): Elaborating entity "Clockdivider" for hierarchy "clock:clk_inst|Clockdivider:clk_div" File: /eecs/home/ngurky/3201 Project/clock.v Line: 25
+Info (12128): Elaborating entity "stopwatch" for hierarchy "stopwatch:sw_inst" File: /eecs/home/ngurky/3201 Project/main.v Line: 53
+Warning (10230): Verilog HDL assignment warning at stopwatch.v(49): truncated value with size 32 to match size of target (4) File: /eecs/home/ngurky/3201 Project/stopwatch.v Line: 49
+Warning (10230): Verilog HDL assignment warning at stopwatch.v(53): truncated value with size 32 to match size of target (4) File: /eecs/home/ngurky/3201 Project/stopwatch.v Line: 53
+Warning (10230): Verilog HDL assignment warning at stopwatch.v(57): truncated value with size 32 to match size of target (4) File: /eecs/home/ngurky/3201 Project/stopwatch.v Line: 57
+Warning (10230): Verilog HDL assignment warning at stopwatch.v(61): truncated value with size 32 to match size of target (4) File: /eecs/home/ngurky/3201 Project/stopwatch.v Line: 61
+Warning (10230): Verilog HDL assignment warning at stopwatch.v(65): truncated value with size 32 to match size of target (4) File: /eecs/home/ngurky/3201 Project/stopwatch.v Line: 65
+Warning (10230): Verilog HDL assignment warning at stopwatch.v(69): truncated value with size 32 to match size of target (4) File: /eecs/home/ngurky/3201 Project/stopwatch.v Line: 69
+Info (12128): Elaborating entity "clockdividersw" for hierarchy "stopwatch:sw_inst|clockdividersw:clk_div" File: /eecs/home/ngurky/3201 Project/stopwatch.v Line: 26
+Warning (10230): Verilog HDL assignment warning at clockdividersw.v(14): truncated value with size 32 to match size of target (16) File: /eecs/home/ngurky/3201 Project/clockdividersw.v Line: 14
+Info (12128): Elaborating entity "countdown" for hierarchy "countdown:cd_inst" File: /eecs/home/ngurky/3201 Project/main.v Line: 65
+Warning (10230): Verilog HDL assignment warning at countdown.v(41): truncated value with size 32 to match size of target (4) File: /eecs/home/ngurky/3201 Project/countdown.v Line: 41
+Warning (10230): Verilog HDL assignment warning at countdown.v(43): truncated value with size 32 to match size of target (4) File: /eecs/home/ngurky/3201 Project/countdown.v Line: 43
+Info (12128): Elaborating entity "Decoder" for hierarchy "Decoder:sec1_decoder" File: /eecs/home/ngurky/3201 Project/main.v Line: 93
+Warning (10270): Verilog HDL Case Statement warning at Decoder.v(10): incomplete case statement has no default case item File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+Warning (10240): Verilog HDL Always Construct warning at Decoder.v(10): inferring latch(es) for variable "index", which holds its previous value in one or more paths through the always construct File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+Info (10041): Inferred latch for "index[0]" at Decoder.v(10) File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+Info (10041): Inferred latch for "index[1]" at Decoder.v(10) File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+Info (10041): Inferred latch for "index[2]" at Decoder.v(10) File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+Info (10041): Inferred latch for "index[3]" at Decoder.v(10) File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+Info (10041): Inferred latch for "index[4]" at Decoder.v(10) File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+Info (10041): Inferred latch for "index[5]" at Decoder.v(10) File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+Info (10041): Inferred latch for "index[6]" at Decoder.v(10) File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+Warning (12241): 7 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13012): Latch Decoder:sec1_decoder|index[0] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal sec1final[1] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch Decoder:sec1_decoder|index[1] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal sec1final[1] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch Decoder:sec1_decoder|index[2] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal sec1final[1] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch Decoder:sec1_decoder|index[3] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal sec1final[1] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch Decoder:sec1_decoder|index[4] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal sec1final[1] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch Decoder:sec1_decoder|index[5] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal sec1final[2] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch Decoder:sec1_decoder|index[6] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal sec1final[1] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch Decoder:sec2_decoder|index[0] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal sec2final[1] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch Decoder:sec2_decoder|index[1] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal sec2final[1] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch Decoder:sec2_decoder|index[2] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal sec2final[1] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch Decoder:sec2_decoder|index[3] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal sec2final[1] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch Decoder:sec2_decoder|index[4] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal sec2final[1] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch Decoder:sec2_decoder|index[5] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal sec2final[2] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch Decoder:sec2_decoder|index[6] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal sec2final[1] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch Decoder:min1_decoder|index[0] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal min1final[1] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch Decoder:min1_decoder|index[1] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal min1final[1] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch Decoder:min1_decoder|index[2] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal min1final[1] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch Decoder:min1_decoder|index[3] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal min1final[1] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch Decoder:min1_decoder|index[4] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal min1final[1] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch Decoder:min1_decoder|index[5] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal min1final[2] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch Decoder:min1_decoder|index[6] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal min1final[1] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch Decoder:min2_decoder|index[0] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal min2final[1] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch Decoder:min2_decoder|index[1] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal min2final[1] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch Decoder:min2_decoder|index[2] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal min2final[1] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch Decoder:min2_decoder|index[3] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal min2final[1] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch Decoder:min2_decoder|index[4] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal min2final[1] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch Decoder:min2_decoder|index[5] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal min2final[2] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch Decoder:min2_decoder|index[6] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal min2final[1] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch Decoder:hour1_decoder|index[0] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal hour1final[1] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch Decoder:hour1_decoder|index[1] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal hour1final[1] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch Decoder:hour1_decoder|index[2] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal hour1final[1] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch Decoder:hour1_decoder|index[3] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal hour1final[1] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch Decoder:hour1_decoder|index[4] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal hour1final[1] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch Decoder:hour1_decoder|index[5] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal hour1final[2] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch Decoder:hour1_decoder|index[6] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal hour1final[1] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch Decoder:hour2_decoder|index[0] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal hour2final[1] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch Decoder:hour2_decoder|index[1] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal hour2final[1] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch Decoder:hour2_decoder|index[2] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal hour2final[1] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch Decoder:hour2_decoder|index[3] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal hour2final[1] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch Decoder:hour2_decoder|index[4] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal hour2final[1] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch Decoder:hour2_decoder|index[5] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal hour2final[2] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch Decoder:hour2_decoder|index[6] has unsafe behavior File: /eecs/home/ngurky/3201 Project/Decoder.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal hour2final[1] File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+Warning (13012): Latch sec1final[0] has unsafe behavior File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal clock File: /eecs/home/ngurky/3201 Project/main.v Line: 8
+Warning (13012): Latch sec1final[1] has unsafe behavior File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal clock File: /eecs/home/ngurky/3201 Project/main.v Line: 8
+Warning (13012): Latch sec1final[2] has unsafe behavior File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal clock File: /eecs/home/ngurky/3201 Project/main.v Line: 8
+Warning (13012): Latch sec1final[3] has unsafe behavior File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal clock File: /eecs/home/ngurky/3201 Project/main.v Line: 8
+Warning (13012): Latch sec2final[0] has unsafe behavior File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal clock File: /eecs/home/ngurky/3201 Project/main.v Line: 8
+Warning (13012): Latch sec2final[1] has unsafe behavior File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal clock File: /eecs/home/ngurky/3201 Project/main.v Line: 8
+Warning (13012): Latch sec2final[2] has unsafe behavior File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal clock File: /eecs/home/ngurky/3201 Project/main.v Line: 8
+Warning (13012): Latch sec2final[3] has unsafe behavior File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal clock File: /eecs/home/ngurky/3201 Project/main.v Line: 8
+Warning (13012): Latch min1final[0] has unsafe behavior File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal clock File: /eecs/home/ngurky/3201 Project/main.v Line: 8
+Warning (13012): Latch min1final[1] has unsafe behavior File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal clock File: /eecs/home/ngurky/3201 Project/main.v Line: 8
+Warning (13012): Latch min1final[2] has unsafe behavior File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal clock File: /eecs/home/ngurky/3201 Project/main.v Line: 8
+Warning (13012): Latch min1final[3] has unsafe behavior File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal clock File: /eecs/home/ngurky/3201 Project/main.v Line: 8
+Warning (13012): Latch min2final[0] has unsafe behavior File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal clock File: /eecs/home/ngurky/3201 Project/main.v Line: 8
+Warning (13012): Latch min2final[1] has unsafe behavior File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal clock File: /eecs/home/ngurky/3201 Project/main.v Line: 8
+Warning (13012): Latch min2final[2] has unsafe behavior File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal clock File: /eecs/home/ngurky/3201 Project/main.v Line: 8
+Warning (13012): Latch min2final[3] has unsafe behavior File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal clock File: /eecs/home/ngurky/3201 Project/main.v Line: 8
+Warning (13012): Latch hour1final[0] has unsafe behavior File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal clock File: /eecs/home/ngurky/3201 Project/main.v Line: 8
+Warning (13012): Latch hour1final[1] has unsafe behavior File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal clock File: /eecs/home/ngurky/3201 Project/main.v Line: 8
+Warning (13012): Latch hour1final[2] has unsafe behavior File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal clock File: /eecs/home/ngurky/3201 Project/main.v Line: 8
+Warning (13012): Latch hour1final[3] has unsafe behavior File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal clock File: /eecs/home/ngurky/3201 Project/main.v Line: 8
+Warning (13012): Latch hour2final[0] has unsafe behavior File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal clock File: /eecs/home/ngurky/3201 Project/main.v Line: 8
+Warning (13012): Latch hour2final[1] has unsafe behavior File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal clock File: /eecs/home/ngurky/3201 Project/main.v Line: 8
+Warning (13012): Latch hour2final[2] has unsafe behavior File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal clock File: /eecs/home/ngurky/3201 Project/main.v Line: 8
+Warning (13012): Latch hour2final[3] has unsafe behavior File: /eecs/home/ngurky/3201 Project/main.v Line: 76
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal clock File: /eecs/home/ngurky/3201 Project/main.v Line: 8
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file /eecs/home/ngurky/3201 Project/output_files/Project.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 436 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 12 input pins
+    Info (21059): Implemented 42 output pins
+    Info (21061): Implemented 382 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 159 warnings
+    Info: Peak virtual memory: 779 megabytes
+    Info: Processing ended: Mon Dec  2 20:39:41 2024
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:11
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in /eecs/home/ngurky/3201 Project/output_files/Project.map.smsg.
+
+
