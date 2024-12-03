@@ -1,0 +1,9 @@
+module mainclock(
+
+	input clk;
+	input reset;
+	output [5:0] sec; //6 bits for 59
+	output [5:0] min;	//6 bits for 59
+	output [4:0] hour; //5 bits for 24 
+); 
+

@@ -1,0 +1,16 @@
+module clockdividersw(
+    input clk,   // Input clock signal
+    output reg cout // Output divided clock signal
+);
+    
+    reg [15:0] count; // Counter to divide the clock signal
+    
+    always @(posedge clk) begin
+        if (count == 16'd49999) begin  // Dividing by 50,000 (for 1ms at 50MHz clock)
+            cout <= ~cout;   // Toggle the output clock
+            count <= 0;
+        end else begin
+            count <= count + 1;
+        end
+    end
+endmodule
