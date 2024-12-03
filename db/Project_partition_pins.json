@@ -1,0 +1,225 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "sec1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sec1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sec1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sec1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sec1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sec1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sec1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sec2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sec2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sec2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sec2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sec2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sec2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sec2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "min1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "min1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "min1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "min1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "min1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "min1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "min1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "min2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "min2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "min2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "min2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "min2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "min2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "min2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "hour1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "hour1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "hour1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "hour1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "hour1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "hour1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "hour1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "hour2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "hour2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "hour2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "hour2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "hour2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "hour2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "hour2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "stopwatch",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
+					"strict" : false
+				},
+				{
+					"name" : "countdown",
+					"strict" : false
+				},
+				{
+					"name" : "switch",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "set[0]",
+					"strict" : false
+				},
+				{
+					"name" : "tens",
+					"strict" : false
+				},
+				{
+					"name" : "set[2]",
+					"strict" : false
+				},
+				{
+					"name" : "set[1]",
+					"strict" : false
+				},
+				{
+					"name" : "set[3]",
+					"strict" : false
+				},
+				{
+					"name" : "pause",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
