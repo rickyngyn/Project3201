@@ -1,0 +1,437 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'min2final[1]'
+Slack : -5.163
+TNS   : -35.268
+
+Type  : Slow 1200mV 85C Model Setup 'hour2final[1]'
+Slack : -4.835
+TNS   : -32.773
+
+Type  : Slow 1200mV 85C Model Setup 'hour1final[1]'
+Slack : -4.560
+TNS   : -31.117
+
+Type  : Slow 1200mV 85C Model Setup 'sec1final[1]'
+Slack : -4.547
+TNS   : -30.558
+
+Type  : Slow 1200mV 85C Model Setup 'sec2final[1]'
+Slack : -4.371
+TNS   : -29.458
+
+Type  : Slow 1200mV 85C Model Setup 'min1final[1]'
+Slack : -4.208
+TNS   : -27.801
+
+Type  : Slow 1200mV 85C Model Setup 'clock'
+Slack : -3.748
+TNS   : -66.119
+
+Type  : Slow 1200mV 85C Model Setup 'clk'
+Slack : -3.393
+TNS   : -98.138
+
+Type  : Slow 1200mV 85C Model Setup 'stopwatch:sw_inst|clockdividersw:clk_div|cout'
+Slack : -1.868
+TNS   : -51.184
+
+Type  : Slow 1200mV 85C Model Setup 'clock:clk_inst|Clockdivider:clk_div|cout'
+Slack : -1.852
+TNS   : -40.777
+
+Type  : Slow 1200mV 85C Model Setup 'countdown:cd_inst|Clockdivider:clk_divider|cout'
+Slack : -1.668
+TNS   : -12.095
+
+Type  : Slow 1200mV 85C Model Setup 'pause'
+Slack : 0.341
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clock'
+Slack : -0.183
+TNS   : -0.396
+
+Type  : Slow 1200mV 85C Model Hold 'stopwatch:sw_inst|clockdividersw:clk_div|cout'
+Slack : 0.315
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clock:clk_inst|Clockdivider:clk_div|cout'
+Slack : 0.316
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'countdown:cd_inst|Clockdivider:clk_divider|cout'
+Slack : 0.343
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'pause'
+Slack : 0.371
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk'
+Slack : 0.508
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'min2final[1]'
+Slack : 0.884
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'min1final[1]'
+Slack : 0.982
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'sec2final[1]'
+Slack : 1.016
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'sec1final[1]'
+Slack : 1.042
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'hour2final[1]'
+Slack : 1.159
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'hour1final[1]'
+Slack : 1.242
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -65.322
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'pause'
+Slack : -3.000
+TNS   : -6.666
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'stopwatch:sw_inst|clockdividersw:clk_div|cout'
+Slack : -1.222
+TNS   : -56.212
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock:clk_inst|Clockdivider:clk_div|cout'
+Slack : -1.222
+TNS   : -48.880
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'countdown:cd_inst|Clockdivider:clk_divider|cout'
+Slack : -1.222
+TNS   : -9.776
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'min1final[1]'
+Slack : 0.397
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'sec2final[1]'
+Slack : 0.421
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'hour1final[1]'
+Slack : 0.425
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'sec1final[1]'
+Slack : 0.438
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'min2final[1]'
+Slack : 0.445
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'hour2final[1]'
+Slack : 0.446
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'min2final[1]'
+Slack : -4.692
+TNS   : -32.017
+
+Type  : Slow 1200mV 0C Model Setup 'hour2final[1]'
+Slack : -4.417
+TNS   : -29.885
+
+Type  : Slow 1200mV 0C Model Setup 'hour1final[1]'
+Slack : -4.156
+TNS   : -28.118
+
+Type  : Slow 1200mV 0C Model Setup 'sec1final[1]'
+Slack : -4.131
+TNS   : -27.718
+
+Type  : Slow 1200mV 0C Model Setup 'sec2final[1]'
+Slack : -3.970
+TNS   : -26.734
+
+Type  : Slow 1200mV 0C Model Setup 'min1final[1]'
+Slack : -3.761
+TNS   : -25.121
+
+Type  : Slow 1200mV 0C Model Setup 'clock'
+Slack : -3.331
+TNS   : -59.020
+
+Type  : Slow 1200mV 0C Model Setup 'clk'
+Slack : -3.025
+TNS   : -85.985
+
+Type  : Slow 1200mV 0C Model Setup 'stopwatch:sw_inst|clockdividersw:clk_div|cout'
+Slack : -1.652
+TNS   : -43.249
+
+Type  : Slow 1200mV 0C Model Setup 'clock:clk_inst|Clockdivider:clk_div|cout'
+Slack : -1.625
+TNS   : -34.002
+
+Type  : Slow 1200mV 0C Model Setup 'countdown:cd_inst|Clockdivider:clk_divider|cout'
+Slack : -1.427
+TNS   : -10.471
+
+Type  : Slow 1200mV 0C Model Setup 'pause'
+Slack : 0.397
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clock'
+Slack : -0.135
+TNS   : -0.267
+
+Type  : Slow 1200mV 0C Model Hold 'clock:clk_inst|Clockdivider:clk_div|cout'
+Slack : 0.286
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'stopwatch:sw_inst|clockdividersw:clk_div|cout'
+Slack : 0.286
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'countdown:cd_inst|Clockdivider:clk_divider|cout'
+Slack : 0.313
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'pause'
+Slack : 0.337
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clk'
+Slack : 0.464
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'min2final[1]'
+Slack : 0.847
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'sec2final[1]'
+Slack : 0.964
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'min1final[1]'
+Slack : 0.967
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'sec1final[1]'
+Slack : 0.997
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'hour2final[1]'
+Slack : 1.125
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'hour1final[1]'
+Slack : 1.245
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -65.322
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'pause'
+Slack : -3.000
+TNS   : -6.666
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'stopwatch:sw_inst|clockdividersw:clk_div|cout'
+Slack : -1.222
+TNS   : -56.212
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock:clk_inst|Clockdivider:clk_div|cout'
+Slack : -1.222
+TNS   : -48.880
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'countdown:cd_inst|Clockdivider:clk_divider|cout'
+Slack : -1.222
+TNS   : -9.776
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'min1final[1]'
+Slack : 0.422
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'sec2final[1]'
+Slack : 0.445
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'hour1final[1]'
+Slack : 0.447
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'min2final[1]'
+Slack : 0.455
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'hour2final[1]'
+Slack : 0.456
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'sec1final[1]'
+Slack : 0.461
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'min2final[1]'
+Slack : -2.557
+TNS   : -17.474
+
+Type  : Fast 1200mV 0C Model Setup 'hour2final[1]'
+Slack : -2.408
+TNS   : -16.198
+
+Type  : Fast 1200mV 0C Model Setup 'hour1final[1]'
+Slack : -2.268
+TNS   : -15.472
+
+Type  : Fast 1200mV 0C Model Setup 'sec1final[1]'
+Slack : -2.248
+TNS   : -15.217
+
+Type  : Fast 1200mV 0C Model Setup 'sec2final[1]'
+Slack : -2.166
+TNS   : -14.716
+
+Type  : Fast 1200mV 0C Model Setup 'min1final[1]'
+Slack : -2.165
+TNS   : -14.198
+
+Type  : Fast 1200mV 0C Model Setup 'clock'
+Slack : -1.437
+TNS   : -21.913
+
+Type  : Fast 1200mV 0C Model Setup 'clk'
+Slack : -1.176
+TNS   : -22.060
+
+Type  : Fast 1200mV 0C Model Setup 'countdown:cd_inst|Clockdivider:clk_divider|cout'
+Slack : -0.615
+TNS   : -4.582
+
+Type  : Fast 1200mV 0C Model Setup 'clock:clk_inst|Clockdivider:clk_div|cout'
+Slack : -0.577
+TNS   : -8.719
+
+Type  : Fast 1200mV 0C Model Setup 'stopwatch:sw_inst|clockdividersw:clk_div|cout'
+Slack : -0.352
+TNS   : -5.522
+
+Type  : Fast 1200mV 0C Model Setup 'pause'
+Slack : 0.693
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clock'
+Slack : -0.268
+TNS   : -1.801
+
+Type  : Fast 1200mV 0C Model Hold 'clock:clk_inst|Clockdivider:clk_div|cout'
+Slack : 0.145
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'stopwatch:sw_inst|clockdividersw:clk_div|cout'
+Slack : 0.145
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'countdown:cd_inst|Clockdivider:clk_divider|cout'
+Slack : 0.156
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'pause'
+Slack : 0.169
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : 0.225
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'min2final[1]'
+Slack : 0.283
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'sec1final[1]'
+Slack : 0.342
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'sec2final[1]'
+Slack : 0.349
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'min1final[1]'
+Slack : 0.361
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'hour1final[1]'
+Slack : 0.399
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'hour2final[1]'
+Slack : 0.400
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -55.826
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'pause'
+Slack : -3.000
+TNS   : -6.391
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock'
+Slack : -3.000
+TNS   : -3.102
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'stopwatch:sw_inst|clockdividersw:clk_div|cout'
+Slack : -1.000
+TNS   : -46.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock:clk_inst|Clockdivider:clk_div|cout'
+Slack : -1.000
+TNS   : -40.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'countdown:cd_inst|Clockdivider:clk_divider|cout'
+Slack : -1.000
+TNS   : -8.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'hour2final[1]'
+Slack : 0.389
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'min2final[1]'
+Slack : 0.403
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'sec1final[1]'
+Slack : 0.419
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'hour1final[1]'
+Slack : 0.421
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'min1final[1]'
+Slack : 0.421
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'sec2final[1]'
+Slack : 0.435
+TNS   : 0.000
+
+------------------------------------------------------------
